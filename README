@@ -1,0 +1,23 @@
+This is a PHP site that should (hopefully) allow you to run a check on which of your WoW raid members have the various Dragon Soul meta achievements.
+
+guildselect.php - this is the main page, lets you select a guild, has news
+realmajax.php - this is the ajax script that runs the realm/guild javascript on the guildselect.php page
+
+guildimport.php - this is where users can import the members of their guild
+guildimportsql.php - this is the script that actually queries the user data from the armory and puts it into MySQL
+
+xrimport.php - this is an alternate page where users can import members of their raid and select each player's server
+xrimportsql.php - this is the script that actually queries the user data from the armory and puts it into MySQL
+
+guildedit.php - this is the page where users can edit their guild rosters
+guildeditsql.php - this is the script that actually edits the guilds in MySQL
+
+results.php - this is the page that displays the guild's achievements
+
+armoryrefresh.php - this is the script that will refresh a guild's information from the armory
+
+guildlist.php - this is a simple script I use for keeping track of new signups
+
+Email me if you have questions: madsushi@gmail.com
+
+Or post here, I guess?
