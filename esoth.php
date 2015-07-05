@@ -142,7 +142,7 @@ $hidemissed = $apiHidemissed;
   $apiArr1 = json_decode($apiStr1, true);
   $apiClass1 = $apiArr1['class'];
   $apiClassColor1 = "classcolor".$apiClass1;
-  $apiArr1 = implode(",", $apiArr1['achievements']['achievementsCompleted']);
+  $apiArr1 = implode(",", $apiArr1['achievements']['criteria']);
   $apiArr1 = explode(",", $apiArr1);
 
 
@@ -163,31 +163,24 @@ $hidemissed = $apiHidemissed;
   $apiArr2 = json_decode($apiStr2, true);
   $apiClass2 = $apiArr2['class'];
   $apiClassColor2 = "classcolor".$apiClass2;
-  $apiArr2 = implode(",", $apiArr2['achievements']['achievementsCompleted']);
+  $apiArr2 = implode(",", $apiArr2['achievements']['criteria']);
   $apiArr2 = explode(",", $apiArr2);
 
   
   
   $achievearray = array();
-  
-  $achievearrayquery = "SELECT id, points, title, icon, description FROM achievements";
-  $achievequery = mysqli_query($sqlcon, $achievearrayquery);
-  
-  $countinsertquery = "INSERT INTO achcount (toon1, realm1, toon2, realm2) VALUES ('".$toonapi1."', '".$realm1."', '".$toonapi2."', '".$realm2."')";
-  $countquery = mysqli_query($sqlcon, $countinsertquery);
-  
-  while ($row = mysqli_fetch_assoc($achievequery)){
-    $id = $row['id'];
-    $points = $row['points'];
-    $title = $row['title'];
-    $icon = $row['icon'];
-    $description = $row['description'];
-    $achievearray[$id]['id'] = $id;
-    $achievearray[$id]['points'] = $points;
-    $achievearray[$id]['title'] = $title;
-    $achievearray[$id]['icon'] = $icon;
-    $achievearray[$id]['description'] = $description;
-  }
+
+    $achievearray['24024']['id'] = '24024';
+    $achievearray['24024']['points'] = '5';
+    $achievearray['24024']['title'] = 'swabby';
+    $achievearray['24024']['icon'] = 'yes';
+    $achievearray['24024']['description'] = 'swabby helmet';
+    
+    $achievearray['24065']['id'] = '24065';
+    $achievearray['24065']['points'] = '5';
+    $achievearray['24065']['title'] = 'zved';
+    $achievearray['24065']['icon'] = 'no';
+    $achievearray['24065']['description'] = 'zved';
   
   echo '<center><form action="results.php" method="get">';
   echo '<input type="hidden" name="region1" value="'.$region1.'">';
@@ -239,7 +232,7 @@ foreach($achievearray as $keydump => $v) {
 
       echo '<td>';
         if(in_array($id, $apiArr1)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
          echo '<img src="/img/0.png">';
         }
@@ -247,7 +240,7 @@ foreach($achievearray as $keydump => $v) {
       
       echo '<td>';
         if(in_array($id, $apiArr2)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
           echo '<img src="/img/0.png">';
         }
@@ -276,7 +269,7 @@ foreach($achievearray as $keydump => $v) {
 
       echo '<td>';
         if(in_array($id, $apiArr1)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
          echo '<img src="/img/0.png">';
         }
@@ -284,7 +277,7 @@ foreach($achievearray as $keydump => $v) {
       
       echo '<td>';
         if(in_array($id, $apiArr2)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
           echo '<img src="/img/0.png">';
         }
@@ -312,7 +305,7 @@ foreach($achievearray as $keydump => $v) {
 
       echo '<td>';
         if(in_array($id, $apiArr1)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
          echo '<img src="/img/0.png">';
         }
@@ -320,7 +313,7 @@ foreach($achievearray as $keydump => $v) {
       
       echo '<td>';
         if(in_array($id, $apiArr2)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
           echo '<img src="/img/0.png">';
         }
@@ -346,7 +339,7 @@ foreach($achievearray as $keydump => $v) {
 
       echo '<td>';
         if(in_array($id, $apiArr1)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
          echo '<img src="/img/0.png">';
         }
@@ -354,7 +347,7 @@ foreach($achievearray as $keydump => $v) {
       
       echo '<td>';
         if(in_array($id, $apiArr2)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
           echo '<img src="/img/0.png">';
         }
@@ -384,7 +377,7 @@ foreach($achievearray as $keydump => $v) {
 
       echo '<td>';
         if(in_array($id, $apiArr1)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
          echo '<img src="/img/0.png">';
         }
@@ -392,7 +385,7 @@ foreach($achievearray as $keydump => $v) {
       
       echo '<td>';
         if(in_array($id, $apiArr2)){
-          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+          echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
         }else{
           echo '<img src="/img/0.png">';
         }
@@ -415,7 +408,7 @@ foreach($achievearray as $keydump => $v) {
 
     echo '<td>';
       if(in_array($id, $apiArr1)){
-        echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+        echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
       }else{
        echo '<img src="/img/0.png">';
       }
@@ -423,7 +416,7 @@ foreach($achievearray as $keydump => $v) {
     
     echo '<td>';
       if(in_array($id, $apiArr2)){
-        echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/icons/'.$icon.'.png"></a>';
+        echo '<a href="http://www.wowhead.com/achievement='.$id.'"><img src="/img/1.png"></a>';
       }else{
         echo '<img src="/img/0.png">';
       }

@@ -31,11 +31,11 @@ require './includes/strip.php';
     $acharray = $v['achievements'];
     foreach($acharray as $vv){
       $subcat = NULL;
-      $id = $vv['id'];
-      $points = $vv['points'];
-      $title = $vv['title'];
-      $icon = $vv['icon'];
-      $desc = $vv['description'];
+      $id = mysqli_real_escape_string($sqlcon,$vv['id']);
+      $points = mysqli_real_escape_string($sqlcon,$vv['points']);
+      $title = mysqli_real_escape_string($sqlcon,$vv['title']);
+      $icon = mysqli_real_escape_string($sqlcon,$vv['icon']);
+      $desc = mysqli_real_escape_string($sqlcon,$vv['description']);
       
       $sqlquery = "INSERT INTO achievements (id, points, title, icon, description) VALUES ('".$id."', '".$points."', '".$title."', '".$icon."', '".$desc."')";
       $runquery = mysqli_query($sqlcon, $sqlquery);
@@ -45,11 +45,11 @@ require './includes/strip.php';
       $subcat = $vvv['id'];
       $acharray = $vvv['achievements'];
       foreach($acharray as $vvvv){
-        $id = $vvvv['id'];
-        $points = $vvvv['points'];
-        $title = $vvvv['title'];
-        $icon = $vvvv['icon'];
-        $desc = $vvvv['description'];
+        $id = mysqli_real_escape_string($sqlcon,$vvvv['id']);
+        $points = mysqli_real_escape_string($sqlcon,$vvvv['points']);
+        $title = mysqli_real_escape_string($sqlcon,$vvvv['title']);
+        $icon = mysqli_real_escape_string($sqlcon,$vvvv['icon']);
+        $desc = mysqli_real_escape_string($sqlcon,$vvvv['description']);
         
         $sqlquery = "INSERT INTO achievements (id, points, title, icon, description) VALUES ('".$id."', '".$points."', '".$title."', '".$icon."', '".$desc."')";
         $runquery = mysqli_query($sqlcon, $sqlquery);
